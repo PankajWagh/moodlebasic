@@ -82,6 +82,7 @@
 
             <!-- Questions. -->
             <div *ngFor="let question of questions">
+				<ion-card><div  *ngIf="question.sectionhtml"  [innerHTML]=question.sectionhtml></div></ion-card>
                 <ion-card id="addon-mod_quiz-question-{{question.slot}}">
                     <!-- "Header" of the question. -->
                     <ion-item-divider>

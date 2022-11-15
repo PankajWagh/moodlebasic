@@ -40,7 +40,7 @@ import { CoreColors } from '@singletons/colors';
 import { CoreText } from '@singletons/text';
 import { CorePromisedValue } from '@classes/promised-value';
 
-const ENROL_BROWSER_METHODS = ['fee', 'paypal'];
+const ENROL_BROWSER_METHODS = ['fee', 'paypal','license'];
 
 /**
  * Page that shows the summary of a course including buttons to enrol and other available options.
@@ -189,11 +189,12 @@ export class CoreCourseSummaryPage implements OnInit, OnDestroy {
         this.guestInstanceId.reset();
 
         const enrolmentMethods = await CoreCourses.getCourseEnrolmentMethods(this.courseId);
-
+		
         enrolmentMethods.forEach((method) => {
             if (!method.status) {
                 return;
             }
+			
 
             if (method.type === 'self') {
                 this.selfEnrolInstances.push(method);
@@ -234,7 +235,7 @@ export class CoreCourseSummaryPage implements OnInit, OnDestroy {
             this.canAccessCourse = await this.canAccessAsGuest();
             this.useGuestAccess = this.canAccessCourse;
         }
-
+		
         this.courseData.resolve(this.course);
     }
 

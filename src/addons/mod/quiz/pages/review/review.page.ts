@@ -190,7 +190,7 @@ export class AddonModQuizReviewPage implements OnInit {
         this.questions.forEach((question) => {
             // Get the readable mark for each question.
             question.readableMark = AddonModQuizHelper.getQuestionMarkFromHtml(question.html);
-
+			console.log(question);
             // Extract the question info box.
             CoreQuestionHelper.extractQuestionInfoBox(question, '.info');
         });

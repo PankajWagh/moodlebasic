@@ -36,11 +36,32 @@
                 </ion-label>
             </ion-item-divider>
         </ng-container>
-
-        <ion-list class="list-item-limited-width">
+			<ng-container *ngIf="courseCategoriesIds.length > 0">
+				<ion-accordion-group expand="inset">
+					<ion-accordion *ngFor="let categoryid of courseCategoriesIds; let i = index;"  toggleIcon="caret-down-circle" toggleIconSlot="start" [attr.value]="categoryid"  (click)="toggleShow(i)">
+						<ion-item slot="header" color="light"   style="cursor:pointer;border:1px solid;"  >
+						  <ion-label>{{categories[categoryid]}}</ion-label>
+						</ion-item>
+						<div class="ion-padding" slot="content" id="category_{{categoryid}}" *ngIf="categoriesshowhide[categoryid]" style="border:1px solid"  >
+							<ion-list class="list-item-limited-width">
+								<core-courses-course-list-item *ngFor="let course of categoriescourses[categoryid]" [course]="course" [showDownload]="downloadEnabled">
+								</core-courses-course-list-item>
+							</ion-list> 
+						</div>
+					</ion-accordion>
+				</ion-accordion-group>	
+            </ng-container>
+		
+		
+		
+		
+		
+		<ion-list class="list-item-limited-width" *ngIf="courseCategoriesIds.length <= 0">
             <core-courses-course-list-item *ngFor="let course of courses" [course]="course" [showDownload]="downloadEnabled">
             </core-courses-course-list-item>
         </ion-list>
+
+       
 
         <core-infinite-loading [enabled]="canLoadMore" (action)="loadMoreCourses($event)" [error]="loadMoreError">
         </core-infinite-loading>

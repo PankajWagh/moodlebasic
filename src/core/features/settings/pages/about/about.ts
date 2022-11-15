@@ -32,21 +32,21 @@ export class CoreSettingsAboutPage {
     appName: string;
     versionName: string;
     privacyPolicy: string;
-    feedbackFormUrl = CoreConstants.CONFIG.feedbackFormUrl ?? 'https://feedback.moodle.org/mobileapp';
-    a11yStatement = CoreConstants.CONFIG.a11yStatement ?? 'https://apps.moodle.com/admin/tool/policy/view.php?versionid=5';
+    feedbackFormUrl = CoreConstants.CONFIG.feedbackFormUrl ?? 'https://ducislanguage.com/mobileapp';
+    a11yStatement = CoreConstants.CONFIG.a11yStatement ?? 'https://ducislanguage.com/privacy-policy/';
     currentSite?: CoreSite;
-    showSurvey: boolean | undefined = false;
+	showSurvey?:boolean;
 
     constructor() {
         this.currentSite = CoreSites.getCurrentSite();
 
         this.appName = CoreConstants.CONFIG.appname;
         this.versionName = CoreConstants.CONFIG.versionname;
+		this.showSurvey=false;
 
         // Calculate the privacy policy to use.
         this.privacyPolicy = (this.currentSite && (this.currentSite.getStoredConfig('tool_mobile_apppolicy') ||
         this.currentSite.getStoredConfig('sitepolicy'))) || CoreConstants.CONFIG.privacypolicy;
-        this.showSurvey = this.currentSite?.isAdmin();
     }
 
     /**

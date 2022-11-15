@@ -18,7 +18,6 @@ import { CoreMainMenuHomeHandler, CoreMainMenuHomeHandlerToDisplay } from '@feat
 import { CoreSites } from '@services/sites';
 import { CoreUtils } from '@services/utils/utils';
 import { makeSingleton } from '@singletons';
-import { CoreLogger } from '@singletons/logger';
 import { CoreCoursesDashboard } from '../dashboard';
 
 /**
@@ -31,11 +30,6 @@ export class CoreDashboardHomeHandlerService implements CoreMainMenuHomeHandler 
 
     name = 'CoreCoursesDashboard';
     priority = 1200;
-    logger: CoreLogger;
-
-    constructor() {
-        this.logger = CoreLogger.getInstance('CoreDashboardHomeHandlerService');
-    }
 
     /**
      * Check if the handler is enabled on a site level.
@@ -65,17 +59,9 @@ export class CoreDashboardHomeHandlerService implements CoreMainMenuHomeHandler 
         const dashboardEnabled = !dashboardDisabled && dashboardConfig !== '0';
 
         if (dashboardAvailable && dashboardEnabled && !blocksDisabled) {
-            try {
-                const blocks = await CoreCoursesDashboard.getDashboardBlocks(undefined, siteId);
+            const blocks = await CoreCoursesDashboard.getDashboardBlocks(undefined, siteId);
 
-                return CoreBlockDelegate.hasSupportedBlock(blocks.mainBlocks) ||
-                    CoreBlockDelegate.hasSupportedBlock(blocks.sideBlocks);
-            } catch (error) {
-                // Error getting blocks, assume it's enabled.
-                this.logger.error('Error getting Dashboard blocks', error);
-
-                return true;
-            }
+            return CoreBlockDelegate.hasSupportedBlock(blocks.mainBlocks) || CoreBlockDelegate.hasSupportedBlock(blocks.sideBlocks);
         }
 
         // Dashboard is enabled but not available, we will fake blocks.
@@ -92,7 +78,7 @@ export class CoreDashboardHomeHandlerService implements CoreMainMenuHomeHandler 
             title: 'core.courses.mymoodle',
             page: CoreDashboardHomeHandlerService.PAGE_NAME,
             class: 'core-courses-dashboard-handler',
-            icon: 'fas-tachometer-alt',
+            icon: 'fa-home',
         };
     }
 

@@ -101,6 +101,7 @@ export class CoreCoursesCourseListItemComponent implements OnInit, OnDestroy, On
             this.enrolmentIcons = [];
 
             this.course.enrollmentmethods.forEach((instance) => {
+				console.log(instance);
                 if (instance === 'self') {
                     this.enrolmentIcons.push({
                         label: 'core.courses.selfenrolment',
@@ -111,7 +112,7 @@ export class CoreCoursesCourseListItemComponent implements OnInit, OnDestroy, On
                         label: 'core.courses.allowguests',
                         icon: 'fas-unlock',
                     });
-                } else if (instance === 'paypal') {
+                } else if (instance === 'paypal' || instance === 'license' ) {
                     this.enrolmentIcons.push({
                         label: 'core.courses.otherenrolments',
                         icon: 'fas-external-link-alt',

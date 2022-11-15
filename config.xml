@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget android-versionCode="40203" id="com.moodle.moodlemobile" ios-CFBundleVersion="4.0.2.2" version="4.0.2" versionCode="40203" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>Moodle</name>
-    <description>Moodle official app</description>
-    <author email="mobile@moodle.com" href="http://moodle.com">Moodle Mobile team</author>
+<widget android-versionCode="10019" id="com.ducislanguage.mobile" ios-CFBundleVersion="1.0.19" version="1.0.19" versionCode="10019" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Ducis Learning App</name>
+    <description>Ducis Learning app</description>
+    <author email="navin@skillheads.in" href="http://skillheads.in">Ducis Mobile team</author>
     <content src="index.html" />
     <access origin="*" />
     <access launch-external="yes" origin="tel:*" />
@@ -27,7 +27,7 @@
     <preference name="UIWebViewBounce" value="false" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="prerendered-icon" value="true" />
-    <preference name="AppendUserAgent" value="MoodleMobile 4.0.2 (40203)" />
+    <preference name="AppendUserAgent" value="Ducis Learning App 1.0.19 (10019)" />
     <preference name="BackupWebStorage" value="none" />
     <preference name="ScrollEnabled" value="false" />
     <preference name="KeyboardDisplayRequiresUserAction" value="false" />
@@ -49,6 +49,8 @@
     <preference name="WKWebViewOnly" value="true" />
     <preference name="WKFullScreenEnabled" value="true" />
     <preference name="AndroidXEnabled" value="true" />
+    <preference name="android-minSdkVersion" value="30" />
+    <preference name="android-targetSdkVersion" value="32" />
     <preference name="GradlePluginGoogleServicesEnabled" value="true" />
     <preference name="GradlePluginGoogleServicesVersion" value="4.3.10" />
     <preference name="StatusBarOverlaysWebView" value="false" />

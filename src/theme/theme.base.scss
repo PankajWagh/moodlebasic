@@ -157,6 +157,11 @@ ion-header {
         ion-spinner {
             margin: 10px;
         }
+		ion-back-button
+		{
+			 --background: transparent;
+		
+		}
 
         ion-back-button,
         .in-toolbar.button-clear,
@@ -1144,24 +1149,24 @@ ion-chip {
 }
 
 ion-searchbar {
-    height: var(--height) !important;
+    height: var(--height,48dp) !important;
 
     .searchbar-input-container {
         color: var(--color) !important;
-        height: var(--height) !important;
+        height: var(--height,48dp) !important;
     }
 
     .searchbar-input {
-        height: var(--height) !important;
+        height: var(--height,48dp) !important;
         border: 1px solid var(--border-color) !important;
         box-shadow: none !important;
         border-radius: var(--border-radius) !important;
         background: var(--background) !important;
-        @include padding-horizontal(var(--height) !important);
+        @include padding-horizontal(var(--height,48dp) !important);
     }
 
     .searchbar-search-icon {
-        @include position(null, null, null, calc(var(--height) / 4) !important);
+        @include position(null, null, null, calc(var(--height,48dp) / 4) !important);
     }
 
     button {
@@ -1551,6 +1556,9 @@ ion-input .native-input {
         outline: none;
     }
 }
+
+
+
 
 // Disable scroll on parent ion contents to enabled PTR on the ones inside the splitview. See split-view component for more info.
 ion-content.disable-scroll-y::part(scroll) {
