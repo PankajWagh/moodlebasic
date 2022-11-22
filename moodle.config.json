@@ -1,8 +1,8 @@
 {
-   "app_id": "com.ducislanguage.mobile",
-    "appname": "Ducis Langauage",
-    "versioncode": 10015,
-    "versionname": "1.0.015",
+   "app_id": "com.ducislanguagelearning.mobile",
+    "appname": "Ducis Langauage Learning",
+    "versioncode": 10001,
+    "versionname": "1.0.001",
     "cache_update_frequency_usually": 420000,
     "cache_update_frequency_often": 1200000,
     "cache_update_frequency_sometimes": 3600000,
@@ -97,7 +97,7 @@
     "forceLoginLogo": false,
     "ioswebviewscheme": "moodleappfs",
     "appstores": {
-        "android": "com.ducislanguage.mobile",
+        "android": "com.ducislanguagelearning.mobile",
         "ios": ""
     },
     "wsrequestqueuelimit": 10,
