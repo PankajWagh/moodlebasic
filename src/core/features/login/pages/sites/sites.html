@@ -28,7 +28,7 @@
                         <h2>
                             <core-format-text [text]="sites[0].siteName" clean="true" [siteId]="sites[0].id"></core-format-text>
                         </h2>
-                        <p><a [href]="sites[0].siteUrl" core-link autoLogin="no">{{ sites[0].siteUrlWithoutProtocol }}</a></p>
+					<!-- <p><a [href]="sites[0].siteUrl" core-link autoLogin="no">{{ sites[0].siteUrlWithoutProtocol }}</a></p> -->
                     </ion-label>
                 </ion-item-divider>
 
@@ -53,10 +53,10 @@
             </ion-card>
         </ion-list>
     </core-loading>
-    <ion-fab slot="fixed" core-fab vertical="bottom" horizontal="end">
+	<!-- <ion-fab slot="fixed" core-fab vertical="bottom" horizontal="end">
         <ion-fab-button (click)="add()" [attr.aria-label]="'core.login.add' | translate">
             <ion-icon name="fas-plus" aria-hidden="true"></ion-icon>
             <span class="sr-only">{{ 'core.login.add' | translate }}</span>
         </ion-fab-button>
-    </ion-fab>
+    </ion-fab>-->
 </ion-content>

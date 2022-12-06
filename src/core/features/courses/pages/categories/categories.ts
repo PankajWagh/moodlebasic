@@ -37,7 +37,7 @@ export class CoreCoursesCategoriesPage implements OnInit, OnDestroy {
     courses: CoreCourseListItem[] = [];
     categoriesLoaded = false;
 
-    showOnlyEnrolled = false;
+    showOnlyEnrolled = true;
 
     downloadEnabled = false;
     downloadCourseEnabled = false;
