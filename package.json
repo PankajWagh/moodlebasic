@@ -1,6 +1,6 @@
 {
   "name": "ducislanguagelearning",
-  "version": "1.0.004",
+  "version": "1.0.005",
   "description": "Ducis Langauage Learning",
   "author": {
     "name": "Skillheads",
@@ -191,8 +191,8 @@
   },
   "cordova": {
     "platforms": [
-      "android",
-      "ios"
+      "ios",
+      "android"
     ],
     "plugins": {
       "cordova-plugin-advanced-http": {
