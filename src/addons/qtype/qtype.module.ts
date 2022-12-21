@@ -30,6 +30,8 @@ import { AddonQtypeNumericalModule } from './numerical/numerical.module';
 import { AddonQtypeRandomSaMatchModule } from './randomsamatch/randomsamatch.module';
 import { AddonQtypeShortAnswerModule } from './shortanswer/shortanswer.module';
 import { AddonQtypeTrueFalseModule } from './truefalse/truefalse.module';
+import { AddonQtypeCombinedModule } from './combined/combined.module';
+import { AddonQtypeSplitsetModule } from './splitset/splitset.module';
 
 @NgModule({
     imports: [
@@ -49,6 +51,8 @@ import { AddonQtypeTrueFalseModule } from './truefalse/truefalse.module';
         AddonQtypeRandomSaMatchModule,
         AddonQtypeShortAnswerModule,
         AddonQtypeTrueFalseModule,
+		AddonQtypeCombinedModule,
+		AddonQtypeSplitsetModule
     ],
 })
 export class AddonQtypeModule { }

@@ -1,0 +1,22 @@
+// Style gapselect content a bit. Most of these styles are copied from Moodle.
+:host ::ng-deep {
+    p {
+        margin: 0 0 .5em;
+    }
+	table.answer.generaltable td,table.answer.generaltable th {
+		border: 1PX SOLID #000;
+		font-size:8px;
+		padding:3px;
+	}
+
+	table.answer.generaltable .header {
+		background:#ccc;
+		font-size:8px;
+		font-weight:bold;
+	}
+	table.answer.generaltable td.text {
+
+		font-size:8px;
+	}
+}
+
