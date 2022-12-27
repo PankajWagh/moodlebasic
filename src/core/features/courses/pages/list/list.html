@@ -37,7 +37,7 @@
             </ion-item-divider>
         </ng-container>
 			<ng-container *ngIf="courseCategoriesIds.length > 0">
-				<ion-accordion-group expand="inset">
+				<ion-accordion-group expand="inset" multiple="false" animated="true">
 					<ion-accordion *ngFor="let categoryid of courseCategoriesIds; let i = index;"  toggleIcon="caret-down-circle" toggleIconSlot="start" [attr.value]="categoryid"  (click)="toggleShow(i)">
 						<ion-item slot="header" color="light"   style="cursor:pointer;border:1px solid;"  >
 						  <ion-label>{{categories[categoryid]}}</ion-label>

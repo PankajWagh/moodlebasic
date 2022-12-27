@@ -9,7 +9,17 @@
  * -------------------------------------------
  */
 :root {
-
+		audio, video{
+			width:100%;
+		}
+		.custom-select
+		{
+			width:95%;
+		}
+		.width100
+		{
+			width:95% !important
+		}
 }
 
 /*

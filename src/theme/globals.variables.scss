@@ -4,23 +4,23 @@
  * Place here all global variables.
  */
 
-$white:       #ffffff !default;
-$gray-100:    #C0C0C0 !default;
-$gray-200:    #cdcdcd !default;
-$gray-300:    #d5d8dc !default; // Stroke
-$gray-400:    #cccccc !default;
-$gray-500:    #1a1b1c !default; // Stroke on inputs
-$gray-600:    #606060 !default;
-$gray-700:    #454545 !default;
-$gray-800:    #313131 !default;
-$gray-900:    #0a0a0a !default; // Copy text
-$black:       #000000 !default; // Avoid usage
+$white:      	#ffffff !default;
+$gray-100:   	#e5e5e5 !default;
+$gray-200:    	#e1e1e1 !default;
+$gray-300:    	#bfc2c6 !default; // Stroke
+$gray-400:    	#cccccc !default;
+$gray-500:    	#1a1b1c !default; // Stroke on inputs
+$gray-600:    	#606060 !default;
+$gray-700:    	#454545 !default;
+$gray-800:    	#313131 !default;
+$gray-900:    	#0a0a0a !default; // Copy text
+$black:       	#000000 !default; // Avoid usage
 
-$blue:        #0f6cbf !default;
-$cyan:        #008196 !default; // Not used.
-$green:       #357a32 !default;
-$red:         #FF0000 !default;
-$yellow:      #f0ad4e !default;
+$blue:        	#0f6cbf !default;
+$cyan:        	#008196 !default; // Not used.
+$green:       	#357a32 !default;
+$red:         	#FF0000 !default;
+$yellow:      	#f0ad4e !default;
 $core-navigation-max-height:46dp;
 $height:46dp;
 $brand-color: #ec0e0e !default;
@@ -73,7 +73,7 @@ $colors:  (
 $screen-breakpoints: (
     xs: 0,
     sm: 576px,
-    md: 768px,
+    md: 95%,
     lg: 992px,
     tablet: 992px,
     xl: 1200px

@@ -360,7 +360,19 @@ export class CoreQuestionDelegateService extends CoreDelegate<CoreQuestionHandle
      * @return Whether it's supported.
      */
     isQuestionSupported(type: string): boolean {
-        return this.hasHandler(this.getFullTypeName(type), true);
+	
+	
+		console.log("*****isQuestionSupported****************"+type);
+
+		if(type != 'combined' && type != 'splitset')
+		{
+				return this.hasHandler(this.getFullTypeName(type), true);
+		}
+		else
+		{
+			return true;
+		}
+        
     }
 
     /**
@@ -383,7 +395,7 @@ export class CoreQuestionDelegateService extends CoreDelegate<CoreQuestionHandle
         siteId?: string,
     ): Promise<void> {
         const type = this.getTypeName(question);
-
+		console.log("question-delegation***********"+type);
         await this.executeFunctionOnEnabled(
             type,
             'prepareAnswers',

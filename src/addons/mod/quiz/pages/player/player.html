@@ -41,7 +41,7 @@
         <form name="addon-mod_quiz-player-form" *ngIf="questions.length && !quizAborted && !showSummary" #quizForm>
             <div *ngFor="let question of questions">
                 
-				<ion-card><div  [innerHTML]=question.sectionhtml></div></ion-card>
+				<ion-card> <ion-card-header><div  [innerHTML]=question.sectionhtml></div> </ion-card-header></ion-card>
 				<ion-card id="addon-mod_quiz-question-{{question.slot}}">
                     <!-- "Header" of the question. -->
                     <ion-item-divider>
@@ -66,7 +66,7 @@
                     </core-question>
                 </ion-card>
             </div>
-        </form>
+			</form>
 
         <!-- Go to next or previous page. -->
         <ion-row *ngIf="questions.length && !quizAborted && !showSummary" class="spacer-top">
