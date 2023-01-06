@@ -327,9 +327,16 @@ export class CoreCoursesListPage implements OnInit, OnDestroy {
 				}
 				
 			}
-
+			if(this.searchText !='')
+			{
+				 this.searchTotal = response.total;
+			}
             this.searchPage++;
-            this.canLoadMore = this.courses.length < this.searchTotal;
+			console.log(response);
+			
+           // this.canLoadMore = this.courses.length < this.searchTotal;
+		   this.canLoadMore = false;
+			
         } catch (error) {
             this.loadMoreError = true; // Set to prevent infinite calls with infinite-loading.
             !this.isDestroyed && CoreDomUtils.showErrorModalDefault(error, 'core.courses.errorsearching', true);

@@ -871,7 +871,9 @@ ion-avatar ion-img, ion-avatar img {
 img[core-external-content]:not([src]) {
     visibility: hidden;
 }
-
+ion-item {
+  --ion-item-background: #fff;
+}
 ion-card {
     border-width: var(--border-width);
     border-style: var(--border-style);

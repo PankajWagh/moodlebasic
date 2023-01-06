@@ -19,6 +19,7 @@
     --gray-200: #{$gray-200};
     --gray-100: #{$gray-100};
     --white: #{$white};
+	--orange:#{$brand-color};
 
     // Ionic shades, defined for ionic internal use.
     --ion-color-step-0:    var(--white);
@@ -61,7 +62,8 @@
     --text-color:       #{$text-color};
     --text-size:        14px;
     --background-color: #{$background-color};
-    --stroke:            var(--gray-300);
+    --stroke:            #($brand-color);
+    
 
     --core-online-color: #5cb85c;
 
@@ -108,7 +110,7 @@
     ion-card {
         --border-width: var(--ion-card-border-width);
         --border-style: solid;
-        --border-color: var(--ion-card-border-color);
+        --border-color: #{$brand-color};
         --box-shadow: none;
         --border-radius: var(--ion-card-radius);
     }
@@ -287,6 +289,8 @@
 
         > ion-icon[slot] {
             color: var(--ion-item-icon-color);
+			background-color:transparent !important;
+			
         }
     }
 
@@ -408,4 +412,22 @@
     } @else {
         --core-mainpage-sitename-display: inline;
     }
+}
+core-mod-icon
+{
+	background-color:transparent !important;
+}
+
+.core-login-login-button{
+background-color:#{$brand-color} !important;
+
+}
+.core-course-progress
+{
+	width:80%;
+	margin:0px auto;
+}
+
+.button-native{
+background-color:#{$brand-color} !important;
 }
