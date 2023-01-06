@@ -29,7 +29,14 @@
 
     <ion-item class="ion-text-wrap" button detail="false" (click)="openCourse()" [attr.aria-label]="course.displayname || course.fullname">
 
-       
+        <ng-container *ngIf="layout == 'list' || layout == 'listwithenrol'">
+            <ion-icon *ngIf="!course.courseImage" name="fas-graduation-cap" slot="start" class="course-icon core-course-thumb"
+                aria-hidden="true">
+            </ion-icon>
+            <ion-avatar *ngIf="course.courseImage" slot="start" class="core-course-thumb">
+                <img [src]="course.courseImage" core-external-content alt="" />
+            </ion-avatar>
+        </ng-container>
 
         <ion-label>
             <div class="core-course-maininfo">
@@ -58,37 +65,28 @@
                         color="success" role="status" [attr.aria-label]="'core.downloaded' | translate"></ion-icon>
                 </p>
 
-                <!--<ion-chip color="primary" *ngIf="course.categoryname"
+                <ion-chip color="primary" *ngIf="course.categoryname"
                     class="core-course-category core-course-additional-info ion-text-nowrap">
                     <span class="sr-only">{{ 'core.courses.aria:coursecategory' | translate }}</span>
                     <ion-label>
                         <core-format-text [text]="course.categoryname" contextLevel="coursecat" [contextInstanceId]="course.categoryid">
                         </core-format-text>
                     </ion-label>
-                </ion-chip> -->
+                </ion-chip>
 
-                <ion-chip color="info" *ngIf="course.visible == 0"
+               <!-- <ion-chip color="info" *ngIf="course.visible == 0"
                     class="core-course-additional-info ion-text-wrap core-course-hidden-message">
                     <ion-label>
                         {{ 'core.course.hiddenfromstudents' | translate }}
                     </ion-label>
-                </ion-chip>
+                </ion-chip> -->
             </div>
-			
-		<div *ngIf="layout == 'list' || layout == 'listwithenrol'">
-            <ion-icon *ngIf="!course.courseImage" name="fas-graduation-cap" slot="start" class="course-icon core-course-thumb"
-                aria-hidden="true">
-            </ion-icon>
-            <ion-avatar *ngIf="course.courseImage" slot="start" class="core-course-thumb">
-                <img [src]="course.courseImage" core-external-content alt="" />
-            </ion-avatar>
-        </div>
 
-            <div *ngIf="layout != 'summarycard' && isEnrolled && progress >= 0 && completionUserTracked !== false"
+           
+        </ion-label>
+    </ion-item>
+	 <div *ngIf="layout != 'summarycard' && isEnrolled && progress >= 0 && completionUserTracked !== false"
                 class="core-course-progress">
                 <core-progress-bar [progress]="progress" a11yText="core.courses.aria:courseprogress"></core-progress-bar>
             </div>
-        </ion-label>
-    </ion-item>
-
 </ion-card>
